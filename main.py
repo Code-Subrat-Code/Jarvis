@@ -110,12 +110,12 @@ def shedule():
         speak(week[day])
     
 
+speak("Hello , I am Jarvis")
 if __name__ == "__main__":
     wishMe()
     while True:
         query = input("user command-->").lower()  # Convert to lowercase
         if any(platform in query for platform in ["facebook", "discord", "whatsapp", "instagram"]):
             social_media(query)  # Now correctly passing query
-        elif("University Time table "in query) or ('shedule' in query):
-            shedule()
-# # speak("Hello , I am Jarvis")
+        # elif("University Time table "in query) or ('shedule' in query):
+        #     shedule()
