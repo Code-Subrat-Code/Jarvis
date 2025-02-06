@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis AI</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jarvis AI</h1>
+        <div class="output-box" id="output">Hello, I am Jarvis!</div>
+        <button class="voice-btn" onclick="activateVoice()">🎤 Speak</button>
+    </div>
+
+    <script>
+        function activateVoice() {
+            document.getElementById("output").innerHTML = "Listening...";
+            // This is where you'll integrate with Flask for real voice commands
+        }
+    </script>
+</body>
+</html>
