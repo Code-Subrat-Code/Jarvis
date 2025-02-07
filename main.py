@@ -23,7 +23,7 @@ def command():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source, duration=0.5)
-        print("🎤 Listening...")
+        print(" Listening...")
         r.pause_threshold = 1.0
         r.dynamic_energy_threshold = True
         r.energy_threshold = 1000  # Adjusted for better accuracy
@@ -31,13 +31,13 @@ def command():
         try:
             audio = r.listen(source)
             query = r.recognize_google(audio, language="en-in")
-            print(f"🗣 User Said: {query.lower()}\n")
+            print(f" User Said: {query.lower()}\n")
             return query.lower()
         except sr.UnknownValueError:
-            print("🤷 Sorry, I didn't catch that. Please repeat.")
+            print("Sorry, I didn't catch that. Please repeat.")
             return "none"
         except sr.RequestError:
-            print("🌐 Network error. Please check your internet connection.")
+            print("Network error. Please check your internet connection.")
             return "none"
 
 # Get Current Day
@@ -47,7 +47,7 @@ def cal_day():
         3: "Thursday", 4: "Friday", 5: "Saturday", 6: "Sunday"
     }
     day_of_week = day_dict[datetime.datetime.today().weekday()]
-    print(f"📅 Today is {day_of_week}")
+    print(f"Today is {day_of_week}")
     return day_of_week
 
 # Greet the User
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     wishMe()
 
     while True:
-        print("\n🔹 Type a command or press ENTER to speak...")
+        print("\n Type a command or press ENTER to speak...")
         query = input("User Command --> ").strip().lower()  # Accept user input
 
         if query == "":  # If user presses ENTER, switch to voice input
